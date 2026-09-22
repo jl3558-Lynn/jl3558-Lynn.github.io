@@ -20,14 +20,13 @@
       padding-bottom: 80px;
     }
 
-    /* Top Navigation Header */
+    /* Header Bar */
     header {
       width: 100%;
       padding: 1.2rem 8%;
       background-color: #ffffff;
       border-bottom: 1px solid #f1f5f9;
       display: flex;
-      justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
@@ -47,46 +46,14 @@
       font-weight: 800;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #475569;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: #0f172a;
-    }
-
-    .btn-download {
-      background-color: #0f172a;
-      color: #ffffff !important;
-      padding: 0.55rem 1.2rem;
-      border-radius: 9999px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: background-color 0.2s;
-    }
-
-    .btn-download:hover {
-      background-color: #334155;
-    }
-
-    /* Container */
+    /* Main Container */
     .container {
       max-width: 1050px;
       margin: 0 auto;
       padding: 3.5rem 2rem;
     }
 
-    /* Hero / Personal Statement Section */
+    /* Personal Statement Section */
     .hero-section {
       display: flex;
       align-items: flex-start;
@@ -94,7 +61,7 @@
       margin-bottom: 4rem;
     }
 
-    /* Profile Card (Fixed Avatar Sizing) */
+    /* Profile Card */
     .profile-card {
       width: 180px;
       flex-shrink: 0;
@@ -169,32 +136,16 @@
       max-width: 680px;
     }
 
-    /* Contact Buttons */
+    /* Contact Links */
     .contact-links {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
-    }
-
-    .btn-email {
-      background-color: #f1f5f9;
-      color: #0f172a;
-      padding: 0.65rem 1.4rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background-color 0.2s;
-    }
-
-    .btn-email:hover {
-      background-color: #e2e8f0;
     }
 
     .link-linkedin {
       color: #475569;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
       transition: color 0.2s;
     }
@@ -208,7 +159,7 @@
       font-size: 1.6rem;
       font-weight: 800;
       color: #0f172a;
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -229,7 +180,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-bottom: 3.5rem;
     }
 
     .skill-tag {
@@ -256,6 +206,12 @@
       border-radius: 12px;
       padding: 1.8rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
     }
 
     .project-card h3 {
@@ -268,6 +224,7 @@
     .project-card p {
       font-size: 0.9rem;
       color: #64748b;
+      line-height: 1.5;
     }
 
     /* Responsive */
@@ -296,19 +253,14 @@
     <div class="brand">
       <span class="logo-red">RBS</span> Jinglin's Portfolio
     </div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      
-    </nav>
   </header>
 
   <!-- Main Container -->
   <main class="container">
     
-    <!-- Hero / Personal Statement Section -->
-    <section class="hero-section" id="about">
-      <!-- Fixed Circular Profile Image -->
+    <!-- Personal Statement Section -->
+    <section class="hero-section">
+      <!-- Profile Image -->
       <div class="profile-card">
         <div class="avatar-wrapper">
           <img src="Jinglin.jpg" alt="Jinglin Liu">
@@ -317,15 +269,14 @@
         <p class="school">Rutgers Business School</p>
       </div>
 
-      <!-- Main Statement Content -->
+      <!-- Statement Content -->
       <div class="statement-content">
         <span class="badge">Accounting </span>
-        <h1>Personal statment.</h1>
+        <h1>Personal description</h1>
         <p>
-          My name is Jinglin Liu. I am an Accounting student at Rutgers Business School (RBS), with a strong interest in learning accounting concepts and professional expertise. Hardworking, dedicated, and trustworthy, I aim to deliver high-quality financial analysis and strategic value.
+          My name is Jinglin Liu. I am an Accounting student at Rutgers Business School (RBS), with a strong interest in learning accounting decision and professional expertise,while being Hardworking, dedicated, and trustworthy.
         </p>
         <div class="contact-links">
-          <a href="mailto:your-email@rutgers.edu" class="btn-email">Email Me</a>
           <a href="https://linkedin.com" target="_blank" class="link-linkedin">LinkedIn Profile &rarr;</a>
         </div>
       </div>
@@ -335,16 +286,16 @@
     <section>
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
-        <span class="skill-tag">Financial Accounting</span>
-        <span class="skill-tag">Managerial Accounting</span>
-        <span class="skill-tag">Data Analysis</span>
-        <span class="skill-tag">Microsoft Excel</span>
-        <span class="skill-tag">Taxation Basics</span>
+        <span class="skill-tag">Numerical skills</span>
+        <span class="skill-tag">Financial data Analysis</span>
+        <span class="skill-tag">Good adaptability</span>
+        <span class="skill-tag">Independent problem-solving</span>
+        <div><span class="skill-tag">Others: Microsoft Excel, Microsoft Word </span></div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section>
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
         <div class="project-card">
