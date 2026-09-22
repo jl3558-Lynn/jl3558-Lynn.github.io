@@ -1,232 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jinglin's Portfolio</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio Title</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: #fcfcfd;
-            color: #1a1a1a;
-            line-height: 1.5;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #222222;
+      background-color: #ffffff;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
 
-        /* Header Navigation */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 4rem;
-            background-color: #ffffff;
-            border-bottom: 1px solid #f0f0f0;
-        }
+    /* Header Bar */
+    header {
+      width: 100%;
+      padding: 20px 8%;
+      border-bottom: 1px solid #eaeaea;
+      display: flex;
+      align-items: center;
+    }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
 
-        .logo span {
-            color: #cc0000;
-            font-weight: 800;
-        }
+    .brand .logo-red {
+      color: #d21034;
+      margin-right: 8px;
+    }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 1.8rem;
-        }
+    /* Container */
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #4a4a4a;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
+    /* Personal Statement Section */
+    .hero-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
 
-        .btn-download {
-            background-color: #1a1e29;
-            color: #ffffff !important;
-            padding: 0.5rem 1.1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
+    /* Left Profile Card */
+    .profile-card {
+      flex-shrink: 0;
+      text-align: center;
+      width: 180px;
+    }
 
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3.5rem 1.5rem;
-        }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      background-color: #e5e5e5;
+    }
 
-        .hero {
-            display: flex;
-            gap: 3.5rem;
-            align-items: flex-start;
-            margin-bottom: 4rem;
-        }
+    .profile-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 4px;
+    }
 
-        /* Profile Card */
-        .profile-card {
-            width: 220px;
-            flex-shrink: 0;
-            text-align: center;
-        }
+    .profile-card p {
+      font-size: 0.85rem;
+      color: #d21034;
+      font-weight: 500;
+    }
 
-        .avatar-wrapper {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
+    /* Main Statement Content */
+    .statement-content {
+      flex-grow: 1;
+    }
 
-        .avatar-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .statement-content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
 
-        .profile-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #000;
-        }
+    .statement-content p {
+      font-size: 1.1rem;
+      color: #555555;
+      max-width: 750px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
 
-        .profile-card .school {
-            font-size: 0.8rem;
-            color: #d93838;
-            font-weight: 600;
-            margin-top: 0.2rem;
-        }
+    .contact-links {
+      display: flex;
+      gap: 24px;
+    }
 
-        .profile-card .class-year {
-            font-size: 0.75rem;
-            color: #888888;
-            margin-top: 0.1rem;
-        }
+    .contact-links a {
+      color: #222222;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
 
-        /* Right Content Area */
-        .hero-content {
-            flex-grow: 1;
-        }
+    .contact-links a:hover {
+      color: #d21034;
+    }
 
-        .badge {
-            display: inline-block;
-            background-color: #fde8e8;
-            color: #e53e3e;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
+    /* Section Titles with Red Line Accent */
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+    }
 
-        .hero-content h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-            color: #0f172a;
-            margin-bottom: 1.2rem;
-        }
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 28px;
+      background-color: #d21034;
+      margin-right: 12px;
+      border-radius: 2px;
+    }
 
-        .hero-content .description {
-            font-size: 0.95rem;
-            color: #555555;
-            line-height: 1.6;
-            margin-bottom: 1.8rem;
-            max-width: 620px;
-        }
+    /* Skills Badges Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 50px;
+    }
 
-        /* CTA Buttons */
-        .cta-buttons {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+    .skill-tag {
+      background-color: #f4f4f5;
+      color: #333333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
 
-        .btn-email {
-            background-color: #f3f4f6;
-            color: #1f2937;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
 
-        .link-linkedin {
-            color: #4b5563;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+    .project-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 24px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
 
-        /* Section Title */
-        .section-title h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 0.4rem;
-        }
+    .project-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
 
-        .section-title p {
-            color: #666666;
-            font-size: 0.88rem;
-            max-width: 650px;
-        }
-    </style>
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+      }
+      
+      .statement-content h1 {
+        font-size: 2rem;
+      }
+
+      .contact-links {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">
-            <span>RBS</span> Jinglin's Portfolio
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <span class="logo-red">RBS</span> <!-- [LOGO/SCHOOL ABBREVIATION] -->
+      <!--Jinglin's Portfolio -->
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Hero / Personal Statement Section -->
+    <section class="hero-section">
+      <!-- Profile Card -->
+      <div class="profile-card">
+      <img src="Jinglin.jpg" alt="Jinglin">
+        <img src="" alt="Profile Image" class="avatar">
+        <h3><!-- Jinglin Liu --></h3>
+        <p><!-- Rutgers business school --></p>
+      </div>
+
+      <!-- Main Statement Content -->
+      <div class="statement-content">
+        <h1>Personal Statement</h1>
+        <p>
+          <!-- My name is Jinglin Liu. I am a student majoring in accounting at RBS, with a strong interest in learning accounting concepts and expertise,while being hardworking,dedicated and trustworthy. -->
+        </p>
+        <div class="contact-links">
+          <a href="" target="_blank"><!-- [LinkedIn Profile] &rarr; --></a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <!-- Main Container -->
-    <main class="container">
-        <section class="hero">
-            <!-- Left Profile Card -->
-            <div class="profile-card">
-                <div class="avatar-wrapper">
-                    <img src="Jinglin.jpg" alt="Jinglin">
-                </div>
-                <h3>Jinglin Liu </h3>
-                <p class="school">Rutgers Business School</p>
-            </div>
+    <!-- Skills Section -->
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag"><!-- [Skill 1] --></span>
+        <span class="skill-tag"><!-- [Skill 2] --></span>
+        <span class="skill-tag"><!-- [Skill 3] --></span>
+        <span class="skill-tag"><!-- [Skill 4] --></span>
+        <span class="skill-tag"><!-- [Skill 5] --></span>
+      </div>
+    </section>
 
-            <!-- Right Hero Content -->
-            <div class="hero-content">
-                <h1>Description</h1>
-                <p class="Personal statement">
-                   My name is Jinglin Liu. I am a student majoring in accounting at RBS, with a strong interest in learning accounting concepts and expertise,while being hardworking,dedicated and trustworthy.
-                <div class="cta-buttons">
-                    <a href="https://linkedin.com" target="_blank" class="link-linkedin">LinkedIn Profile &rarr;</a>
-                </div>
-     <!-- Skills -->
-            <section>
-                <h1>Skills<h1>
-                    
-            
-            </div>
-        </section>
+    <!-- Projects Section -->
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3><!-- [Project Title 1] --></h3>
+        </div>
+        <div class="project-card">
+          <h3><!-- [Project Title 2] --></h3>
+        </div>
+      </div>
+    </section>
 
-        
+  </main>
 
 </body>
 </html>
